@@ -10,7 +10,7 @@ const NavBar = () => {
         { id: 3, name: 'Services', link: '' },
         { id: 4, name: 'Doctors', link: '' },
         { id: 5, name: 'Book Appointment', link: '' },
-        { id: 6, name: 'Patient Portal', link: '' },
+        { id: 6, name: 'Patient Portal', link: 'PatientPortal' },
         { id: 7, name: 'Contact Us', link: '' },
     ];
 

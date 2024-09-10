@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage/HomePage";
 import NavBar from "./components/HomePage/NavBar";
 import './App.css'
 import Footer from "./components/HomePage/footer";
+import Login from "./components/PortalAuth/Login";
 
 export default function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -40,6 +41,7 @@ export default function App() {
         </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/PatientPortal" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
