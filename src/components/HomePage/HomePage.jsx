@@ -1,6 +1,6 @@
 import React from 'react'
 import HealthImg from '../../assets/health1.png'
-import BtnDefault from '../Buttons/Button'
+import Button from '../Buttons/Button'
 
 const HomePage = () => {
   return (
@@ -13,7 +13,7 @@ const HomePage = () => {
 
                     <div className="mt-12">
                         <div className="flex">
-                            <BtnDefault btnTitle={"Book an Appointment"}/>
+                            <Button buttonTitle={"Book an Appointment"}/>
                         </div>
                     </div>
                 </div>
