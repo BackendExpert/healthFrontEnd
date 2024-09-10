@@ -1,0 +1,39 @@
+.btn{
+    position: relative;
+    color: var(--purpleColor);
+    width: auto;
+    height: auto;
+    padding: 10px 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: transparent;
+    border: 2px solid var(--purpleColor);
+    cursor: pointer;
+    z-index: 1;
+    transition: .3s;
+    border-radius: 16px;
+}
+
+.btn:hover{
+    color: var(--btnhoverColor);
+    box-shadow: 0 0 5px var(--purpleColor), 0 0 5px inset;
+}
+
+.btn::after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: var(--purpleColor);
+    box-shadow: 0 0 20px var(--purpleColor);
+    z-index: -1;
+    transition: .3s;
+    border-radius: 13px;
+}
+
+.btn:hover:after{
+    left: 0;
+    width: 100%;
+}

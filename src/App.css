@@ -1,0 +1,9 @@
+:root{
+    --BlueColor: #0ea5e9;
+    --btnhoverColor: white;
+}
+
+
+*{
+    color: var(--BlueColor)
+}
