@@ -4,6 +4,7 @@ import Button from '../Buttons/Button'
 import ButtonOutLine from '../Buttons/ButtonOutLine'
 import AboutUs from './AboutUs'
 import Services from './Services'
+import Testimonials from './Testimonials'
 
 const HomePage = () => {
   return (
@@ -37,8 +38,11 @@ const HomePage = () => {
 
             <div className="my-16">
                 <Services />
+            </div>        
+
+            <div className="my-16">
+                <Testimonials />
             </div>
-        
         </div>
     </div>
   )
