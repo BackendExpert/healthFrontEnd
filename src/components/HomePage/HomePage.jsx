@@ -3,6 +3,7 @@ import HealthImg from '../../assets/health1.png'
 import Button from '../Buttons/Button'
 import ButtonOutLine from '../Buttons/ButtonOutLine'
 import AboutUs from './AboutUs'
+import Services from './Services'
 
 const HomePage = () => {
   return (
@@ -32,6 +33,10 @@ const HomePage = () => {
 
             <div className="my-16">
                 <AboutUs />
+            </div>
+
+            <div className="my-16">
+                <Services />
             </div>
         
         </div>
