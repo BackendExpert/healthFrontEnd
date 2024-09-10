@@ -1,6 +1,8 @@
 import React from 'react'
 import HealthImg from '../../assets/health1.png'
 import Button from '../Buttons/Button'
+import ButtonOutLine from '../Buttons/ButtonOutLine'
+import AboutUs from './AboutUs'
 
 const HomePage = () => {
   return (
@@ -12,8 +14,14 @@ const HomePage = () => {
                     <p className="mt-6">Providing Comprehensive Medical Services with a Personal Touch</p>
 
                     <div className="mt-12">
-                        <div className="flex">
+                        <div className="md:flex">
+                            <div className="mx-2 md:my-0 my-2">
                             <Button buttonTitle={"Book an Appointment"}/>
+                            </div>
+
+                            <div className="mx-2 md:my-0 my-2">
+                            <ButtonOutLine buttonTitle={"Get Started"} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -21,6 +29,11 @@ const HomePage = () => {
                     <img src={HealthImg} alt="" />
                 </div>
             </div>
+
+            <div className="my-16">
+                <AboutUs />
+            </div>
+        
         </div>
     </div>
   )
