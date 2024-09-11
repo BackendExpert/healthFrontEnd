@@ -84,12 +84,12 @@ const Login = () => {
                 <div className="my-6">
                     <form action="" onSubmit={headleRegister} method="post">
                         <div className="md:grid grid-cols-2 gap-4">
-                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Username'/>
-                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='NIC Number'/>
+                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Username' onChange={e => SetSignUpData({ SignUpData, username:e.target.value})}/>
+                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='NIC Number' onChange={e => SetSignUpData({ SignUpData, nic:e.target.value})}/>
                         </div>
                         <div className="md:grid grid-cols-2 gap-4">
-                            <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address'/>
-                            <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password'/>
+                            <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address' onChange={e => SetSignUpData({ SignUpData, email:e.target.value})}/>
+                            <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password' onChange={e => SetSignUpData({ SignUpData, password:e.target.value})}/>
                         </div>
 
                     
