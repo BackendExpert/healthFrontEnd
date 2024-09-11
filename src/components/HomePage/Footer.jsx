@@ -8,22 +8,7 @@ const Footer = () => {
         <div className="py-8 md:flex justify-between">
           <h1 className="uppercase text-white text-xl font-bold w-full md:text-left text-center">HealthCare PVT</h1>
 
-          <div className=" md:mt-0 mt-6">
-            <div className="flex md:mt-[-20px]">
-              <div className="bg-white p-4 rounded-full mx-2">
-                  <BsFacebook className='md:h-6 w-auto'/>
-              </div>
-              <div className="bg-white p-4 rounded-full mx-2">
-                  <BsLinkedin className='md:h-6 w-auto'/>
-              </div>
-              <div className="bg-white p-4 rounded-full mx-2">
-                  <BsInstagram className='md:h-6 w-auto'/>
-              </div>
-              <div className="bg-white p-4 rounded-full mx-2">
-                  <BsYoutube className='md:h-6 w-auto'/>
-              </div>
-            </div>
-          </div>
+
         </div>
         <hr />
 

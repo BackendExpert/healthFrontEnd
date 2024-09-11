@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import NavBar from "./components/HomePage/NavBar";
 import './App.css'
-import Footer from "./components/HomePage/footer";
+import Footer from "./components/HomePage/Footer";
 import Login from "./components/PortalAuth/Login";
 
 export default function App() {
