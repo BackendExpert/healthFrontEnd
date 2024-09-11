@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import LoginImg from '../../assets/LoginImg.png'
 import axios from 'axios'
 import  secureLocalStorage  from  "react-secure-storage";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate()
+
     const [LoginData, SetLoginData] = useState({
         email: '',
         password: ''
