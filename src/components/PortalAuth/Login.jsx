@@ -25,7 +25,32 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <div className="w-full"></div>
+            <div className="w-full">
+            <div className="w-full md:pl-8  md:mt-0">
+                <h2 className="text-xl font-semibold ">Need Help?</h2>
+                <p className="mb-4">If you are experiencing issues accessing your account, you can reach our support team for assistance.</p>
+
+                <h2 className="text-xl font-semibold mb-4">Support</h2>
+                <ul className="list-disc pl-4">
+                    <li><a href="/forgot-password" className="text-blue-500">Forgot Password?</a></li>
+                    <li><a href="/register" className="text-blue-500">Create an Account</a></li>
+                    <li><a href="/help" className="text-blue-500">Help and Support</a></li>
+                </ul>
+
+                <h2 className="text-xl font-semibold mt-8 mb-4">Announcements</h2>
+                <p className="mb-4 text-gray-700">Our patient portal will be undergoing scheduled maintenance on Sept 30, 2024, from 12:00 AM to 6:00 AM. Please plan accordingly.</p>
+
+                <h2 className="text-xl font-semibold mt-8 mb-4">COVID-19 Updates</h2>
+                <p className="mb-4 text-gray-700">Due to the ongoing pandemic, we recommend patients to use telehealth services whenever possible. Stay safe and follow the latest health protocols.</p>
+
+                <h2 className="text-xl font-semibold mt-8 mb-4">Security Tips</h2>
+                <p className="text-gray-600">Ensure your password is secure and avoid sharing login details with anyone. Always log out after using shared devices.</p>
+
+                <h2 className="text-xl font-semibold mt-8 mb-4">Terms & Privacy</h2>
+                <p className="text-gray-600">By logging in, you agree to our <a href="/terms" className="text-blue-500">Terms of Service</a> and <a href="/privacy" className="text-blue-500">Privacy Policy</a>.</p>
+                </div>
+ 
+            </div>
         </div>
     </div>
   )
