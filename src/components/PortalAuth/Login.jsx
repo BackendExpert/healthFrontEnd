@@ -74,8 +74,8 @@ const Login = () => {
 
                 <div className="">
                     <form action="" onSubmit={headleLogin} method="post">
-                        <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address' onChange={e => SetLoginData({LoginData, email:e.target.value})}/>
-                        <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password' onChange={e => SetLoginData({LoginData, password:e.target.value})}/>
+                        <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address' onChange={e => SetLoginData({ ...LoginData, email:e.target.value})}/>
+                        <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password' onChange={e => SetLoginData({ ...LoginData, password:e.target.value})}/>
                     
                         <input type="submit" value="Login to Portal" className="bg-[#0ea5e9] text-white font-bold py-2 px-8 rounded-full mt-4 cursor-pointer" />
                     </form>
