@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginImg from '../../assets/LoginImg.png'
 
 const Login = () => {
+    const [LoginData, SetLoginData] = useState({
+        
+    })
 
 
     const headleLogin = (e) => {
