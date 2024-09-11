@@ -9,6 +9,7 @@ import PrivateRoute from "./components/Dashboard/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import DashNav from "./components/Dashboard/DashNav";
 import DashFooter from "./components/Dashboard/DashFooter";
+import DashHome from "./components/Dashboard/DashHome";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -63,7 +64,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/PatientPortal" element={<Login />} />
-          <Route path="/Dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+          <Route path="/Dashboard/" element={<PrivateRoute element={<Dashboard />} />}>
+            <Route path="Home" element={<DashHome />} />
+          </Route>
         </Routes>
       </Layout>
     </BrowserRouter>
