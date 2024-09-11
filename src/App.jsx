@@ -5,6 +5,8 @@ import NavBar from "./components/HomePage/NavBar";
 import './App.css'
 import Footer from "./components/HomePage/Footer";
 import Login from "./components/PortalAuth/Login";
+import PrivateRoute from "./components/Dashboard/PrivateRoute";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export default function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -42,6 +44,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/PatientPortal" element={<Login />} />
+          <PrivateRoute path='/Dashboard' element={<Dashboard /> } />
         </Routes>
         <Footer />
       </BrowserRouter>
