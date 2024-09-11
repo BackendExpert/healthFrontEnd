@@ -24,6 +24,23 @@ const Login = () => {
                         <input type="submit" value="Login to Portal" className="bg-[#0ea5e9] text-white font-bold py-2 px-8 rounded-full mt-4 cursor-pointer" />
                     </form>
                 </div>
+
+                <div className="my-6">
+                    <form action="" onSubmit={headleSubmit} method="post">
+                        <div className="md:grid grid-cols-2 gap-4">
+                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Username'/>
+                            <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='NIC Number'/>
+                        </div>
+                        <div className="md:grid grid-cols-2 gap-4">
+                            <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address'/>
+                            <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password'/>
+                        </div>
+
+                    
+                        <input type="submit" value="Create New Account" className="bg-[#0ea5e9] text-white font-bold py-2 px-8 rounded-full mt-4 cursor-pointer" />
+                    </form>
+                </div>
+
             </div>
             <div className="w-full">
             <div className="w-full md:pl-8  md:mt-0">
