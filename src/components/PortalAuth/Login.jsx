@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import LoginImg from '../../assets/LoginImg.png'
 
+
 const Login = () => {
     const [LoginData, SetLoginData] = useState({
         email: '',
@@ -15,12 +16,19 @@ const Login = () => {
     })
     
 
-    const headleLogin = (e) => {
+    const headleLogin = async (e) => {
+        e.preventDefault();
 
+        try{
+            const res = await a
+        }   
+        catch(err){
+            console.log(err)
+        }
     }
 
     const headleRegister = (e) => {
-
+        e.preventDefault();
     }
 
   return (
