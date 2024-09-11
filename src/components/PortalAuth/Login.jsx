@@ -109,7 +109,6 @@ const Login = () => {
                 <h2 className="text-xl font-semibold mb-4">Support</h2>
                 <ul className="list-disc pl-4">
                     <li><a href="/forgot-password" className="text-blue-500">Forgot Password?</a></li>
-                    <li><a href="/register" className="text-blue-500">Create an Account</a></li>
                     <li><a href="/help" className="text-blue-500">Help and Support</a></li>
                 </ul>
 
