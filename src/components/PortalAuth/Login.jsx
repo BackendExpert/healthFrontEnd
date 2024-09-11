@@ -3,9 +3,17 @@ import LoginImg from '../../assets/LoginImg.png'
 
 const Login = () => {
     const [LoginData, SetLoginData] = useState({
-        
+        email: '',
+        password: ''
     })
 
+    const [SignUpData, SetSignUpData] = useState({
+        username: '',
+        nic: '',
+        useremail: '',
+        userPass: ''
+    })
+    
 
     const headleLogin = (e) => {
 
