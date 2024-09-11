@@ -2,7 +2,13 @@ import React from 'react'
 import LoginImg from '../../assets/LoginImg.png'
 
 const Login = () => {
-    const headleSubmit = (e) => {
+
+
+    const headleLogin = (e) => {
+
+    }
+
+    const headleRegister = (e) => {
 
     }
   return (
@@ -17,7 +23,7 @@ const Login = () => {
                 <h1 className="text-center font-semibold text-xl uppercase">Login</h1>
 
                 <div className="">
-                    <form action="" onSubmit={headleSubmit} method="post">
+                    <form action="" onSubmit={headleLogin} method="post">
                         <input type="email" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Email Address'/>
                         <input type="password" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Password'/>
                     
@@ -26,7 +32,7 @@ const Login = () => {
                 </div>
 
                 <div className="my-6">
-                    <form action="" onSubmit={headleSubmit} method="post">
+                    <form action="" onSubmit={headleRegister} method="post">
                         <div className="md:grid grid-cols-2 gap-4">
                             <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='Username'/>
                             <input type="text" name="" id="" className="my-2 h-12 w-full bg-blue-100 rounded pl-2" required placeholder='NIC Number'/>
