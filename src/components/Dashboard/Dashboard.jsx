@@ -15,7 +15,7 @@ const Dashboard = () => {
                     window.localStorage.reload()
                 }
 
-                const response = await axios.get(import.meta.env.VITE_APP_API + '/dashboard', {
+                const response = await axios.get(import.meta.env.VITE_APP_API + '/dashboard/Auth', {
                     headers: {
                       Authorization: `Bearer ${token}`,
                     },
