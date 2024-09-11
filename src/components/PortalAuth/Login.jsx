@@ -32,7 +32,7 @@ const Login = () => {
                     navigate('/Dashboard/Summary')
                     // login user Email 
                     secureLocalStorage.setItem('Login1', res.data.Result.email)
-                    secureLocalStorage.setItem('Login2', res.data.Result.Role)      
+                    secureLocalStorage.setItem('Login2', res.data.Result.role)      
                     const CheckActive = res.data.Result.Status
                 }
                 else{
