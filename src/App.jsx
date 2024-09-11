@@ -7,6 +7,8 @@ import Footer from "./components/HomePage/Footer";
 import Login from "./components/PortalAuth/Login";
 import PrivateRoute from "./components/Dashboard/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
+import DashNav from "./components/Dashboard/DashNav";
+
 
 export default function App() {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -35,16 +37,18 @@ export default function App() {
     };
   }, [lastScrollY]);
 
+  const isDashbaord = location.pathname === '/Dashboard'
+
   return (
     <div className="">
       <BrowserRouter>
         <div className={`fixed top-0 w-full z-50 transition-transform duration-300 ${showNavBar ? "translate-y-0" : "-translate-y-full"}`}>
-          <NavBar />
+          { isDashbaord ? <DashNav /> : <NavBar /> }
         </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/PatientPortal" element={<Login />} />
-          <PrivateRoute path='/Dashboard' element={<Dashboard /> } />
+          <Route path="/Dashboard" element={<PrivateRoute element={<Dashboard /> }/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
