@@ -42,8 +42,23 @@ const Login = () => {
         }
     }
 
-    const headleRegister = (e) => {
+    const headleRegister = async (e) => {
         e.preventDefault();
+        try{
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/Auth/Register', SignUpData)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Registation Success")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.error)
+                }
+            })
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
   return (
