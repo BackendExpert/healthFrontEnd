@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LoginImg from '../../assets/LoginImg.png'
+import axios from 'axios'
 
 
 const Login = () => {
@@ -20,7 +21,21 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const res = await a
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/Auth/Login', LoginData)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Login Success")
+                    localStorage.setItem('token', res.data.Token)
+                    navigate('/Dashboard/Summary')
+                    // login user Email 
+                    secureLocalStorage.setItem('Login1', res.data.Result.email)
+                    secureLocalStorage.setItem('Login2', res.data.Result.Role)      
+                    const CheckActive = res.data.Result.Status
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
         }   
         catch(err){
             console.log(err)
