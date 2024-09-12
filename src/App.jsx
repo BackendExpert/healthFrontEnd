@@ -43,16 +43,9 @@ function Layout({ children }) {
 
   return (
     <div>
-      <div className={`fixed top-0 w-full z-50 transition-transform duration-300 ${showNavBar ? "translate-y-0" : "-translate-y-full"}`}>
-        {isDashboard ? <div className=""></div> : <NavBar />}
-      </div>
-
-      <div className="content">
-        {children}
-      </div>
-
-      {/* Show the appropriate footer */}
-      {isDashboard ? <div className=""></div> : <Footer />}
+      { !isDashboard && showNavBar ? <NavBar /> : null }
+      {children}
+      { !isDashboard && showNavBar ? <Footer /> : null }
     </div>
   );
 }
