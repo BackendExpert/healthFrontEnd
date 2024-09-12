@@ -1,9 +1,14 @@
 :root{
     --BlueColor: #0ea5e9;
     --btnhoverColor: white;
+    --textWhite: white;
 }
 
 
 *{
     color: var(--BlueColor)
+}
+
+.textWhite{
+    color: var(--textWhite);
 }

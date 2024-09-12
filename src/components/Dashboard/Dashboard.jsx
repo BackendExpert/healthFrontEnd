@@ -37,7 +37,7 @@ const Dashboard = () => {
 //   }, [navigate]);
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen bg-blue-100/50 ">
       <div className="md:flex">
         <div className="w-1/5 fixed top-0 left-0 h-full">
           <DashSide />
