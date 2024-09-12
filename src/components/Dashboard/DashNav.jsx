@@ -1,9 +1,21 @@
 import React from 'react'
+import UserImg from '../../assets/User.png'
 
 const DashNav = () => {
   return (
-    <div className='bg-white rounded-md py-4 mr-2 my-4 px-4 shadow-md'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus deserunt perferendis inventore ipsam quia at, nostrum aut sed. Non, nemo natus unde iusto quaerat obcaecati animi fugiat optio blanditiis laudantium?
+    <div className='py-4 mr-2 px-4 '>
+        <div className="flex justify-between">
+            <div className="md:block hidden">
+              <h1 className="uppercase text-2xl font-semibold mt-2"></h1>
+            </div>
+            <div className="flex">
+              <div className="">
+                <h1 className="text-sm pr-2">JehanKandy</h1>
+                <h1 className="text-sm pr-2 uppercase text-right text-gray-500 font-bold">Admin</h1>
+              </div>
+              <img src={UserImg} alt="" className='h-10 w-auto rounded-full'/>
+            </div>
+        </div>
     </div>
   )
 }

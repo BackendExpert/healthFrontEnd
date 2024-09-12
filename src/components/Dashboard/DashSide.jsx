@@ -33,7 +33,7 @@ const DashSide = () => {
 
   return (
     <div className="">
-      <button className="md:hidden fixed top-4 right-4 z-50 bg-gray-800 text-white p-2 rounded font-semibold" onClick={toggleSidebar}>
+      <button className="md:hidden fixed top-4 lift-4 z-50 bg-blue-800 text-white p-2 rounded font-semibold" onClick={toggleSidebar}>
         { !isOpen ? <BsList /> : <BsX /> }
       </button>
 
@@ -42,7 +42,7 @@ const DashSide = () => {
           <h1 className="mx-5 py-4">
             <div className="flex">
                 <BsLungsFill className='h-8 w-auto'/>
-                <h1 className="pt-1 text-2xl font-semibold pl-2">Health Care</h1>
+                <h1 className="pt-1 text-2xl font-semibold pl-2 uppercase">Health Care</h1>
             </div>
           </h1>
           <hr className='border border-[#0ea5e9]'/>
