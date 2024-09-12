@@ -39,7 +39,7 @@ function Layout({ children }) {
     };
   }, [lastScrollY]);
 
-  const isDashboard = location.pathname === '/Dashboard';
+  const isDashboard = location.pathname.startsWith('/Dashboard');
 
   return (
     <div>
