@@ -14,7 +14,7 @@ const Dashboard = () => {
         </div>
         <div className="md:w-full md:ml-[20%]"> 
           <DashNav />
-          <div className="py-4 px-2">
+          <div className="py-4 px-2 md:mr-4  md:mx-0 ml-4 mr-4">
             <Outlet />
           </div>
         </div>
