@@ -8,33 +8,33 @@ import secureLocalStorage from "react-secure-storage";
 const Dashboard = () => {
   const navigate = useNavigate();
 
-//   // Uncomment and use the authentication logic if needed
-//   useEffect(() => {
-//     const checkAuth = async () => {
-//       try {
-//         const token = localStorage.getItem('token');
+  // Uncomment and use the authentication logic if needed
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const token = localStorage.getItem('token');
 
-//         if (!token) {
-//           navigate('/PatientPortal');
-//           window.location.reload(); // Corrected from window.localStorage.reload()
-//         }
+        if (!token) {
+          navigate('/PatientPortal');
+          window.location.reload(); // Corrected from window.localStorage.reload()
+        }
 
-//         const response = await axios.get(import.meta.env.VITE_APP_API + '/dashboard/Auth', {
-//           headers: {
-//             Authorization: `Bearer ${token}`,
-//           },
-//         });
+        const response = await axios.get(import.meta.env.VITE_APP_API + '/dashboard/Auth', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-//         if (!response.data.success) {
-//           navigate('/PatientPortal');
-//         }
-//       } catch (err) {
-//         console.log(err);
-//         navigate('/PatientPortal');
-//       }
-//     };
-//     checkAuth();
-//   }, [navigate]);
+        if (!response.data.success) {
+          navigate('/PatientPortal');
+        }
+      } catch (err) {
+        console.log(err);
+        navigate('/PatientPortal');
+      }
+    };
+    checkAuth();
+  }, [navigate]);
 
   return (
     <div className="w-full min-h-screen bg-blue-100/50 ">
@@ -44,7 +44,7 @@ const Dashboard = () => {
         </div>
         <div className="md:w-full md:ml-[20%]"> 
           <DashNav />
-          <div className="py-4 px-6">
+          <div className="py-4 px-2">
             <Outlet />
           </div>
         </div>
