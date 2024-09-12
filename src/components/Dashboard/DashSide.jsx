@@ -45,7 +45,6 @@ const DashSide = () => {
                 <h1 className="pt-1 text-2xl font-semibold pl-2 uppercase">Health Care</h1>
             </div>
           </h1>
-          <hr className='border border-[#0ea5e9]'/>
           <div className="h-full hide-scrollbar overflow-auto">
             { SideMenu.map((menu) => {
               const isActive = location.pathname === menu.link;
