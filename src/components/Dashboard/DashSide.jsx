@@ -37,7 +37,7 @@ const DashSide = () => {
         { !isOpen ? <BsList /> : <BsX /> }
       </button>
 
-      <div className={` md:min-w-74 md:max-w-64 w-full md:w-auto h-screen md:relative fixed top-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
+      <div className={`backdrop-blur-md bg-white/30 md:min-w-74 md:max-w-64 w-full md:w-auto h-screen md:relative fixed top-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
         <div className="bg-blue-100/50 py-2 h-full">
           <div className="h-full hide-scrollbar overflow-auto">
             { SideMenu.map((menu) => {

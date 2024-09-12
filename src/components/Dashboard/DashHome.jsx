@@ -2,7 +2,9 @@ import React from 'react'
 
 const DashHome = () => {
   return (
-    <div>DashHome</div>
+    <div>
+        <h1 className="text-red-500 font-bold">Hi alllllllllllllllllllll</h1>
+    </div>
   )
 }
 
