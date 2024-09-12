@@ -44,7 +44,7 @@ const DashHome = () => {
                             }
                             else if(DashData.role === "Admin"){
                               return (
-                                  <center><img src={AdminImg} alt="" className='h-40 w-auto'/></center>
+                                  <div className=""></div>
                               )
                             }
                             else if(DashData.role === "Nurse"){

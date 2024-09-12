@@ -45,7 +45,7 @@ function Layout({ children }) {
     <div>
       { !isDashboard && showNavBar ? <NavBar /> : null }
       {children}
-      { !isDashboard && showNavBar ? <Footer /> : null }
+      { !isDashboard && <Footer />  }
     </div>
   );
 }
