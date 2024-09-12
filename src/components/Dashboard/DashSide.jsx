@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone } from "react-icons/bs";
+import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone, BsLungsFill } from "react-icons/bs";
 
 const DashSide = () => {
   const navigate = useNavigate();
@@ -39,6 +39,13 @@ const DashSide = () => {
 
       <div className={`backdrop-blur-md bg-white/30 md:min-w-74 md:max-w-64 w-full md:w-auto h-screen md:relative fixed top-0 left-0 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out`}>
         <div className="bg-blue-100/50 py-2 h-full">
+          <h1 className="mx-5 py-4">
+            <div className="flex">
+                <BsLungsFill className='h-8 w-auto'/>
+                <h1 className="pt-1 text-2xl font-semibold pl-2">Health Care</h1>
+            </div>
+          </h1>
+          <hr className='border border-[#0ea5e9]'/>
           <div className="h-full hide-scrollbar overflow-auto">
             { SideMenu.map((menu) => {
               const isActive = location.pathname === menu.link;
