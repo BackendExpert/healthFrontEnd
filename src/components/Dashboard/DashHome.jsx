@@ -4,6 +4,8 @@ import  secureLocalStorage  from  "react-secure-storage"
 import { useNavigate } from 'react-router-dom'
 import DoctorImg from '../../assets/Doctor.png'
 import PatentImg from '../../assets/PatientImg.png'
+import AdminImg from '../../assets/Admin.png'
+import NurseImg from '../../assets/Nurse.png'
 
 const DashHome = () => {
     const navigate = useNavigate()
@@ -42,12 +44,12 @@ const DashHome = () => {
                             }
                             else if(DashData.role === "Admin"){
                               return (
-                                  <center><img src={DoctorImg} alt="" className='h-40 w-auto'/></center>
+                                  <center><img src={AdminImg} alt="" className='h-40 w-auto'/></center>
                               )
                             }
                             else if(DashData.role === "Nurse"){
                               return (
-                                  <center><img src={DoctorImg} alt="" className='h-40 w-auto'/></center>
+                                  <center><img src={NurseImg} alt="" className='h-40 w-auto'/></center>
                               )
                             }
                         })()
