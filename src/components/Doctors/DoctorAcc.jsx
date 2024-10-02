@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import secureLocalStorage from "react-secure-storage";
-import PatientImg from "../../assets/PatientImg.png"
+import DoctorImg from "../../assets/Doctor.png"
 import CountUp from 'react-countup';
 import { BsPlusSquareFill } from 'react-icons/bs';
 
@@ -18,7 +18,7 @@ const DoctorAcc = () => {
                     <div className="md:grid grid-cols-4 gap-4">
                         <div className="bg-[#00B0FF] w-auto rounded-md flex justify-between px-4 py-6">
                             <div className="flex">
-                                <img src={PatientImg} alt="" className="rounded-xl h-16 w-auto" />
+                                <img src={DoctorImg} alt="" className="rounded-xl h-16 w-auto" />
                                 <div className="">
                                     <p className="pl-2 text-white pt-2 uppercase font-semibold text-xl">Doctors</p>
                                     <p className="pl-2 text-white text-sm">Total Doctors</p>

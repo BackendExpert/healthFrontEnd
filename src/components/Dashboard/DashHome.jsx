@@ -6,6 +6,7 @@ import DoctorImg from '../../assets/Doctor.png'
 import PatentImg from '../../assets/PatientImg.png'
 import AdminImg from '../../assets/Admin.png'
 import NurseImg from '../../assets/Nurse.png'
+import SuperAdminImg from '../../assets/Admin.png'
 
 const DashHome = () => {
     const navigate = useNavigate()
@@ -42,9 +43,9 @@ const DashHome = () => {
                                     <center><img src={PatentImg} alt="" className='h-40 w-auto'/></center>
                                 )
                             }
-                            else if(DashData.role === "Admin"){
+                            else if(DashData.role === "SuperAdmin"){
                               return (
-                                  <div className=""></div>
+                                <center><img src={SuperAdminImg} alt="" className='h-40 w-auto'/></center>
                               )
                             }
                             else if(DashData.role === "Nurse"){

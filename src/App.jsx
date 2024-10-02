@@ -13,6 +13,7 @@ import DashHome from "./components/Dashboard/DashHome";
 import PatientAcc from "./components/Patients/PatientAcc";
 import DoctorAcc from "./components/Doctors/DoctorAcc";
 import NurseAcc from "./components/Nurse/NurseAcc";
+import StaffAcc from "./components/Staff/StaffAcc";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -65,6 +66,7 @@ export default function App() {
             <Route path="PatientAccounts" element={<PatientAcc /> } />
             <Route path="DoctorAccounts" element={<DoctorAcc /> } /> 
             <Route path="NurseAccounts" element={<NurseAcc /> } />
+            <Route path="StaffAccounts" element={<StaffAcc /> } />
           </Route>
         </Routes>
       </Layout>
