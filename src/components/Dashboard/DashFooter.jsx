@@ -2,7 +2,7 @@ import React from 'react'
 
 const DashFooter = () => {
   return (
-    <div>DashFooter</div>
+    <div>Developed and Designed by JehanKandy</div>
   )
 }
 
