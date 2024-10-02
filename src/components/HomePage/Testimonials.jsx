@@ -1,7 +1,8 @@
 import React from 'react'
-import Patient from '../../assets/Patient.png'
+import Patient from '../../assets/PatientImg.png'
 
 const Testimonials = () => {
+    
   return (
     <div data-aos="zoom-in">
         <h1 className="font-semibold text-2xl text-center">What Our Patients Say</h1>
