@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import DashNav from "./components/Dashboard/DashNav";
 import DashFooter from "./components/Dashboard/DashFooter";
 import DashHome from "./components/Dashboard/DashHome";
+import PatientAcc from "./components/Patients/PatientAcc";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="/PatientPortal" element={<Login />} />
           <Route path="/Dashboard/" element={<PrivateRoute element={<Dashboard />} />}>
             <Route path="Home" element={<DashHome />} />
+            <Route path="PatientAccounts" element={<PatientAcc /> } />
           </Route>
         </Routes>
       </Layout>
