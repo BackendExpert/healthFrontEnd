@@ -13,7 +13,12 @@ const DashSide = () => {
 
   const SideMenu = [
     { id: 1, name: "Dashboard", link: '/Dashboard/Home', icon: <BsSpeedometer2 className='h-5 w-auto fill-blue-500 hover:fill-white' /> },
-    { id: 2, name: "Accounts", link: '', icon: <BsPeople className='h-5 w-auto fill-blue-500' />, submenu: [{ id: 1, name: "User Accounts", link: '/Dashboard/UserAccounts' }] },
+    { id: 2, name: "Accounts", link: '', icon: <BsPeople className='h-5 w-auto fill-blue-500' />, submenu: [
+      { id: 1, name: "Patient Accounts", link: '/Dashboard/PatientAccounts' },
+      { id: 2, name: "Doctors Accounts", link: '/Dashboard/DoctorAccounts' },
+      { id: 3, name: "Nurse Accounts", link: '/Dashboard/NurseAccounts' },
+      { id: 4, name: "Staff Accounts", link: '/Dashboard/StaffAccounts' },
+    ] },
     { id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto fill-blue-500' />, submenu: [
       { id: 1, name: "New Package", link: '/Dashboard/NewPackage' },
       { id: 2, name: "Manage Packages", link: '/Dashboard/ManagePackages' },
