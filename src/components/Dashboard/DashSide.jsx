@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone, BsLungsFill } from "react-icons/bs";
+import secureLocalStorage from "react-secure-storage";
 
 const DashSide = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState({});
+
+  const EmailUser = secureLocalStorage.getItem("Login1");
+  const RoleUser = secureLocalStorage.getItem("Login2");
 
   const toggleSidebar = () => setIsOpen(!isOpen);
   const toggleSubmenu = (id) => setSubmenuOpen(prev => ({ ...prev, [id]: !prev[id] }));
@@ -53,37 +57,75 @@ const DashSide = () => {
           <div className="h-full hide-scrollbar overflow-auto">
             { SideMenu.map((menu) => {
               const isActive = location.pathname === menu.link;
-              return (
-                <div key={menu.id}>
-                  <div
-                    className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
-                    onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
-                  >
-                    <div className="flex">
-                      <div className="pt-1 pr-2">{menu.icon}</div>
-                      <div className="pt-1">{menu.name}</div>
+
+              if(RoleUser === "SuperAdmin"){
+                return (
+                  <div key={menu.id}>
+                    <div
+                      className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
+                      onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
+                    >
+                      <div className="flex">
+                        <div className="pt-1 pr-2">{menu.icon}</div>
+                        <div className="pt-1">{menu.name}</div>
+                      </div>
+                      { menu.submenu && (
+                        <div className="text-blue-500">
+                          { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
+                        </div>
+                      )}
                     </div>
-                    { menu.submenu && (
-                      <div className="text-blue-500">
-                        { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
+                    { menu.submenu && submenuOpen[menu.id] && (
+                      <div className="my-4">
+                        <div className="bg-white mx-4 rounded-md shadow-md">
+                          { menu.submenu.map((submenu) => (
+                            <Link to={submenu.link} key={submenu.id}>
+                              <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
+                                <p className="pl-6">{submenu.name}</p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
-                  { menu.submenu && submenuOpen[menu.id] && (
-                    <div className="my-4">
-                      <div className="bg-white mx-4 rounded-md shadow-md">
-                        { menu.submenu.map((submenu) => (
-                          <Link to={submenu.link} key={submenu.id}>
-                            <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
-                              <p className="pl-6">{submenu.name}</p>
-                            </div>
-                          </Link>
-                        ))}
+                );
+              }
+              else{
+                if(menu.id !== 2){
+                  return (
+                    <div key={menu.id}>
+                      <div
+                        className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
+                        onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
+                      >
+                        <div className="flex">
+                          <div className="pt-1 pr-2">{menu.icon}</div>
+                          <div className="pt-1">{menu.name}</div>
+                        </div>
+                        { menu.submenu && (
+                          <div className="text-blue-500">
+                            { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
+                          </div>
+                        )}
                       </div>
+                      { menu.submenu && submenuOpen[menu.id] && (
+                        <div className="my-4">
+                          <div className="bg-white mx-4 rounded-md shadow-md">
+                            { menu.submenu.map((submenu) => (
+                              <Link to={submenu.link} key={submenu.id}>
+                                <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
+                                  <p className="pl-6">{submenu.name}</p>
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              );
+                  );
+                }
+              }
             })}
           </div>
         </div>
