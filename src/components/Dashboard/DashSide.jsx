@@ -24,9 +24,9 @@ const DashSide = () => {
       { id: 4, name: "Staff Accounts", link: '/Dashboard/StaffAccounts' },
     ] },
     { id: 3, name: "Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-blue-500' />, submenu: [
-      { id: 1, name: "New Package", link: '/Dashboard/NewPackage' },
-      { id: 2, name: "Manage Packages", link: '/Dashboard/ManagePackages' },
-      { id: 3, name: "Package Usage", link: '/Dashboard/PackageUsage' }
+      { id: 1, name: "New Appointments", link: '/Dashboard/NewPackage' },
+      { id: 2, name: "Today's Appointments", link: '/Dashboard/ManagePackages' },
+      { id: 3, name: "All Appointments", link: '/Dashboard/PackageUsage' }
     ] },
     { id: 4, name: "Other Packages", link: '', icon: <BsBoxes className='h-5 w-auto fill-blue-500' />, submenu: [
       { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
