@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../Buttons/Button'
+import Button from '../../components/Buttons/Button'
 
 const Visit = () => {
   return (

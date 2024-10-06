@@ -1,11 +1,11 @@
 import React from 'react'
 import HealthImg from '../../assets/health1.png'
-import Button from '../Buttons/Button'
-import ButtonOutLine from '../Buttons/ButtonOutLine'
 import AboutUs from './AboutUs'
 import Services from './Services'
 import Testimonials from './Testimonials'
 import Visit from './Visit'
+import Button from '../../components/Buttons/Button'
+import ButtonOutLine from '../../components/Buttons/ButtonOutLine'
 
 const HomePage = () => {
   return (

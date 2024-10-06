@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone, BsLungsFill } from "react-icons/bs";
+import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsWifi, BsBoxes, BsMegaphone, BsLungsFill, BsCalendarCheckFill } from "react-icons/bs";
 import secureLocalStorage from "react-secure-storage";
 
 const DashSide = () => {
@@ -23,7 +23,7 @@ const DashSide = () => {
       { id: 3, name: "Nurse Accounts", link: '/Dashboard/NurseAccounts' },
       { id: 4, name: "Staff Accounts", link: '/Dashboard/StaffAccounts' },
     ] },
-    { id: 3, name: "Packages", link: '', icon: <BsWifi className='h-5 w-auto fill-blue-500' />, submenu: [
+    { id: 3, name: "Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-blue-500' />, submenu: [
       { id: 1, name: "New Package", link: '/Dashboard/NewPackage' },
       { id: 2, name: "Manage Packages", link: '/Dashboard/ManagePackages' },
       { id: 3, name: "Package Usage", link: '/Dashboard/PackageUsage' }

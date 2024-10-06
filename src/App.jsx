@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import HomePage from "./components/HomePage/HomePage";
-import NavBar from "./components/HomePage/NavBar";
+import HomePage from "./pages/HomePage/HomePage";
+import NavBar from "./pages/HomePage/NavBar";
 import './App.css';
-import Footer from "./components/HomePage/Footer";
-import Login from "./components/PortalAuth/Login";
+import Footer from "./pages/HomePage/Footer";
+import Login from "./pages/PortalAuth/Login";
 import PrivateRoute from "./components/Dashboard/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import DashNav from "./components/Dashboard/DashNav";
 import DashFooter from "./components/Dashboard/DashFooter";
 import DashHome from "./components/Dashboard/DashHome";
-import PatientAcc from "./components/Patients/PatientAcc";
-import DoctorAcc from "./components/Doctors/DoctorAcc";
-import NurseAcc from "./components/Nurse/NurseAcc";
-import StaffAcc from "./components/Staff/StaffAcc";
+import PatientAcc from "./pages/Patients/PatientAcc";
+import DoctorAcc from "./pages/Doctors/DoctorAcc";
+import NurseAcc from "./pages/Nurse/NurseAcc";
+import StaffAcc from "./pages/Staff/StaffAcc";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
