@@ -53,7 +53,7 @@ const DashNav = () => {
         <div className="p-4 mx-4">
           <div className="flex my-2">
             <BsPersonFill className='h-6 w-auto pr-2'/>
-            <p className="">Profile</p>
+            <a href="Profile"><p className="">Profile</p></a>            
           </div>
 
           <div className="flex my-4 cursor-pointer" onClick={headleLogout}>
