@@ -86,7 +86,24 @@ const PatientAcc = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {
+                                PatientData.map((patient, index) => {
+                                    return (
+                                        <tr className="h-12 border-b border-[#00B0FF]/20" key={index}>
+                                            <td className='font-semibold'>{patient.id}</td>
+                                            <td>{patient.pemail}</td>
+                                            <td>{patient.pnic}</td>
+                                            <td>{patient.pname}</td>
+                                            <td className='font-semibold text-green-500'>{patient.Status}</td>  
+                                            <td>
+                                                <a href="">
+                                                    <button className='bg-[#00B0FF] px-4 py-2 text-white rounded'>View</button>
+                                                </a>
+                                            </td>                                            
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>
