@@ -33,10 +33,6 @@ const DashSide = () => {
       { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
       { id: 2, name: "Voice", link: '/Dashboard/voice' }
     ] },
-    { id: 5, name: "Promotions", link: '', icon: <BsMegaphone className='h-5 w-auto fill-blue-500' />, submenu: [
-      { id: 1, name: "New Promotions", link: '/Dashboard/AddPromotion' },
-      { id: 2, name: "Manage Promotions", link: '/Dashboard/ManagePromotions' }
-    ] },
     { id: 6, name: "Profile", link: '/Dashboard/Profile', icon: <BsPersonFill className='h-5 w-auto fill-blue-500' /> },
     { id: 7, name: "Settings", link: '/Dashboard/Settings', icon: <BsGearFill className='h-5 w-auto fill-blue-500' /> }
   ];
@@ -91,7 +87,7 @@ const DashSide = () => {
                     key={menu.id}
                     menu={{
                       ...menu,
-                      submenu: menu.submenu?.filter(submenu => submenu.link !== '/Dashboard/AddAppointment' && submenu.link !== '/Dashboard/Appointments')
+                      submenu: menu.submenu?.filter(submenu => submenu.link !== '/Dashboard/AddAppointment')
                     }}
                     isActive={isActive}
                     submenuOpen={submenuOpen}

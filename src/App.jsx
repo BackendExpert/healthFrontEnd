@@ -18,6 +18,8 @@ import Appointments from "./pages/Appointments/Appointments";
 import NewAppointments from "./pages/Appointments/NewAppointments";
 import TodayAppointments from "./pages/Appointments/TodayAppointments";
 import AddAppointment from "./pages/Appointments/AddAppointment";
+import Profile from "./pages/Profile/Profile";
+import Settings from "./pages/Settings/Settings";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -75,6 +77,8 @@ export default function App() {
             <Route path="NewAppointments" element={<NewAppointments /> } />
             <Route path="TodayAppointments" element={<TodayAppointments /> } />
             <Route path="AddAppointment" element={<AddAppointment /> } />
+            <Route path="Profile" element={<Profile />} />
+            <Route path="Settings" element={<Settings /> } />
           </Route>
         </Routes>
       </Layout>
