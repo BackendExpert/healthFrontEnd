@@ -17,6 +17,7 @@ import StaffAcc from "./pages/Staff/StaffAcc";
 import Appointments from "./pages/Appointments/Appointments";
 import NewAppointments from "./pages/Appointments/NewAppointments";
 import TodayAppointments from "./pages/Appointments/TodayAppointments";
+import AddAppointment from "./pages/Appointments/AddAppointment";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -73,6 +74,7 @@ export default function App() {
             <Route path="Appointments" element={<Appointments /> } /> 
             <Route path="NewAppointments" element={<NewAppointments /> } />
             <Route path="TodayAppointments" element={<TodayAppointments /> } />
+            <Route path="AddAppointment" element={<AddAppointment /> } />
           </Route>
         </Routes>
       </Layout>
