@@ -59,150 +59,60 @@ const DashSide = () => {
             { SideMenu.map((menu) => {
               const isActive = location.pathname === menu.link;
 
-              if(RoleUser === "SuperAdmin"){
-                if(menu.id !== 4){
-                  return (
-                    <div key={menu.id}>
-                      <div
-                        className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
-                        onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
-                      >
-                        <div className="flex">
-                          <div className="pt-1 pr-2">{menu.icon}</div>
-                          <div className="pt-1">{menu.name}</div>
-                        </div>
-                        { menu.submenu && (
-                          <div className="text-blue-500">
-                            { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
-                          </div>
-                        )}
-                      </div>
-                      { menu.submenu && submenuOpen[menu.id] && (
-                        <div className="my-4">
-                          <div className="bg-white mx-4 rounded-md shadow-md">
-                            { menu.submenu.map((submenu) => (
-                              <Link to={submenu.link} key={submenu.id}>
-                                <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
-                                  <p className="pl-6">{submenu.name}</p>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-              }
-              if(RoleUser === "Staff" ){
-                if(menu.id !== 2 && menu.id !== 4){
-                  return (
-                    <div key={menu.id}>
-                      <div
-                        className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
-                        onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
-                      >
-                        <div className="flex">
-                          <div className="pt-1 pr-2">{menu.icon}</div>
-                          <div className="pt-1">{menu.name}</div>
-                        </div>
-                        { menu.submenu && (
-                          <div className="text-blue-500">
-                            { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
-                          </div>
-                        )}
-                      </div>
-                      { menu.submenu && submenuOpen[menu.id] && (
-                        <div className="my-4">
-                          <div className="bg-white mx-4 rounded-md shadow-md">
-                            { menu.submenu.map((submenu) => (
-                              <Link to={submenu.link} key={submenu.id}>
-                                <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
-                                  <p className="pl-6">{submenu.name}</p>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
+              if(RoleUser === "SuperAdmin" && menu.id !== 4){
+                return (
+                  <MenuComponent 
+                    key={menu.id}
+                    menu={menu}
+                    isActive={isActive}
+                    submenuOpen={submenuOpen}
+                    toggleSubmenu={toggleSubmenu}
+                    navigate={navigate}
+                  />
+                );
               }
 
-              if(RoleUser === "Doctor"){
-                if(menu.id !== 2 && menu.id !== 4){
-                  return (
-                    <div key={menu.id}>
-                      <div
-                        className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
-                        onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
-                      >
-                        <div className="flex">
-                          <div className="pt-1 pr-2">{menu.icon}</div>
-                          <div className="pt-1">{menu.name}</div>
-                        </div>
-                        { menu.submenu && (
-                          <div className="text-blue-500">
-                            { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
-                          </div>
-                        )}
-                      </div>
-                      { menu.submenu && submenuOpen[menu.id] && (
-                        <div className="my-4">
-                          <div className="bg-white mx-4 rounded-md shadow-md">
-                            { menu.submenu.map((submenu) => (
-                              <Link to={submenu.link} key={submenu.id}>
-                                <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
-                                  <p className="pl-6">{submenu.name}</p>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
+              if(RoleUser === "Staff" && menu.id !== 2 && menu.id !== 4){
+                return (
+                  <MenuComponent 
+                    key={menu.id}
+                    menu={menu}
+                    isActive={isActive}
+                    submenuOpen={submenuOpen}
+                    toggleSubmenu={toggleSubmenu}
+                    navigate={navigate}
+                  />
+                );
               }
 
-              if(RoleUser === "Patient"){
-                if(menu.id !== 2 && menu.id !== 3){
-                  return (
-                    <div key={menu.id}>
-                      <div
-                        className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
-                        onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
-                      >
-                        <div className="flex">
-                          <div className="pt-1 pr-2">{menu.icon}</div>
-                          <div className="pt-1">{menu.name}</div>
-                        </div>
-                        { menu.submenu && (
-                          <div className="text-blue-500">
-                            { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
-                          </div>
-                        )}
-                      </div>
-                      { menu.submenu && submenuOpen[menu.id] && (
-                        <div className="my-4">
-                          <div className="bg-white mx-4 rounded-md shadow-md">
-                            { menu.submenu.map((submenu) => (
-                              <Link to={submenu.link} key={submenu.id}>
-                                <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
-                                  <p className="pl-6">{submenu.name}</p>
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
+              if(RoleUser === "Doctor" && menu.id !== 2 && menu.id !== 4){
+                return (
+                  <MenuComponent 
+                    key={menu.id}
+                    menu={{
+                      ...menu,
+                      submenu: menu.submenu?.filter(submenu => submenu.link !== '/Dashboard/AddAppointment' && submenu.link !== '/Dashboard/Appointments')
+                    }}
+                    isActive={isActive}
+                    submenuOpen={submenuOpen}
+                    toggleSubmenu={toggleSubmenu}
+                    navigate={navigate}
+                  />
+                );
               }
 
-
+              if(RoleUser === "Patient" && menu.id !== 2 && menu.id !== 3){
+                return (
+                  <MenuComponent 
+                    key={menu.id}
+                    menu={menu}
+                    isActive={isActive}
+                    submenuOpen={submenuOpen}
+                    toggleSubmenu={toggleSubmenu}
+                    navigate={navigate}
+                  />
+                );
+              }
             })}
           </div>
         </div>
@@ -210,5 +120,37 @@ const DashSide = () => {
     </div>
   );
 };
+
+const MenuComponent = ({ menu, isActive, submenuOpen, toggleSubmenu, navigate }) => (
+  <div>
+    <div
+      className={`my-2 duration-300 py-1 pl-6 px-4 pb-2 flex items-center justify-between cursor-pointer mx-2 rounded-xl ${isActive ? 'bg-white' : 'hover:bg-white hover:shadow-md'}`}
+      onClick={() => menu.submenu ? toggleSubmenu(menu.id) : navigate(menu.link)}
+    >
+      <div className="flex">
+        <div className="pt-1 pr-2">{menu.icon}</div>
+        <div className="pt-1">{menu.name}</div>
+      </div>
+      { menu.submenu && (
+        <div className="text-blue-500">
+          { submenuOpen[menu.id] ? <BsChevronUp className='fill-blue-500' /> : <BsChevronDown className='fill-blue-500' /> }
+        </div>
+      )}
+    </div>
+    { menu.submenu && submenuOpen[menu.id] && (
+      <div className="my-4">
+        <div className="bg-white mx-4 rounded-md shadow-md">
+          { menu.submenu.map((submenu) => (
+            <Link to={submenu.link} key={submenu.id}>
+              <div className={`my-1 duration-300 hover:bg-blue-200 rounded-md py-1 px-2 text-sm ${location.pathname === submenu.link ? 'bg-white' : ''}`}>
+                <p className="pl-6">{submenu.name}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+);
 
 export default DashSide;
