@@ -9,6 +9,37 @@ const PatientAcc = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
     const navigate = useNavigate()
 
+    const PatientData = [
+        {
+            id: 1,
+            pemail: 'patient@123.com',
+            pnic: '200105101033',
+            pname: 'Kamal',
+            Status: 'Active',
+        },
+        {
+            id: 2,
+            pemail: 'patient@123.com',
+            pnic: '200105101033',
+            pname: 'Kamal',
+            Status: 'Active',
+        },
+        {
+            id: 3,
+            pemail: 'patient@123.com',
+            pnic: '200105101033',
+            pname: 'Kamal',
+            Status: 'Active',
+        },
+        {
+            id: 4,
+            pemail: 'patient@123.com',
+            pnic: '200105101033',
+            pname: 'Kamal',
+            Status: 'Active',
+        },
+    ]
+
     if(RoleUser === "SuperAdmin" || RoleUser === "Staff"){
         return (
             <div>
@@ -30,6 +61,37 @@ const PatientAcc = () => {
 
                     </div>
                 </div>
+
+                <div className="bg-white p-4 my-4 rounded-md shadow-md">
+                    <table className='w-full'>
+                        <thead className='bg-[#00B0FF]'>
+                            <tr className='h-12'>
+                                <th className='text-white font-semibold'>
+                                    Patient ID
+                                </th>
+                                <th className='text-white font-semibold'>
+                                    Patient Email
+                                </th>
+                                <th className='text-white font-semibold'>
+                                    Patient NIC
+                                </th>
+                                <th className='text-white font-semibold'>
+                                    Patient Name
+                                </th>
+                                <th className='text-white font-semibold'>
+                                    Patient Status
+                                </th>
+                                <th className='text-white font-semibold'>                                    
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+
             </div>
         )
     }
