@@ -10,7 +10,7 @@ const DoctorAcc = () => {
     const RoleUser = secureLocalStorage.getItem("Login2");
     const navigate = useNavigate()
 
-    if(RoleUser === "SuperAdmin"){
+    if(RoleUser === "SuperAdmin" || RoleUser === "Staff"){
         return (
             <div>
                 <h1 className="font-semibold uppercase text-xl">Doctor Accounts</h1>

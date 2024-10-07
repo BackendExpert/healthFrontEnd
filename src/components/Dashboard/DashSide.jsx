@@ -68,7 +68,7 @@ const DashSide = () => {
                 );
               }
 
-              if(RoleUser === "Staff" && menu.id !== 2 && menu.id !== 4){
+              if(RoleUser === "Staff" && menu.id !== 4){
                 return (
                   <MenuComponent 
                     key={menu.id}
