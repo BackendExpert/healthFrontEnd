@@ -14,6 +14,9 @@ import PatientAcc from "./pages/Patients/PatientAcc";
 import DoctorAcc from "./pages/Doctors/DoctorAcc";
 import NurseAcc from "./pages/Nurse/NurseAcc";
 import StaffAcc from "./pages/Staff/StaffAcc";
+import Appointments from "./pages/Appointments/Appointments";
+import NewAppointments from "./pages/Appointments/NewAppointments";
+import TodayAppointments from "./pages/Appointments/TodayAppointments";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -67,6 +70,9 @@ export default function App() {
             <Route path="DoctorAccounts" element={<DoctorAcc /> } /> 
             <Route path="NurseAccounts" element={<NurseAcc /> } />
             <Route path="StaffAccounts" element={<StaffAcc /> } />
+            <Route path="Appointments" element={<Appointments /> } /> 
+            <Route path="NewAppointments" element={<NewAppointments /> } />
+            <Route path="TodayAppointments" element={<TodayAppointments /> } />
           </Route>
         </Routes>
       </Layout>
