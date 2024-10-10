@@ -15,7 +15,7 @@ const StaffAcc = () => {
             <div>
                 <h1 className="font-semibold uppercase text-xl">Staff Accounts</h1>
                 <div className="bg-white p-4 my-2 rounded-md shadow-md">
-                    <div className="md:grid grid-cols-4 gap-4">
+                    <div className="md:grid grid-cols-3 gap-4">
                         <div className="bg-[#00B0FF] w-auto rounded-md flex justify-between px-4 py-6">
                             <div className="flex">
                                 <img src={StaffImg} alt="" className="rounded-xl h-16 w-auto" />
