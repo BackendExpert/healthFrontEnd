@@ -36,11 +36,11 @@ const AddDoctor = () => {
             <div className="py-4">
                 <form onSubmit={headleDoctorCreate} method="post">
                     <div className="md:grid grid-cols-2 gap-4">
-                        <div className="">
+                        <div className="md:my-0 my-2">
                             <p className="">Doctor Name:</p>
                             <input value={DoctorData.doc_name} type="text" name="doc_name" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor Name' onChange={handleChange} required/>
                         </div>
-                        <div className="">
+                        <div className="md:my-0 my-2">
                             <p className="">Doctor Email:</p>
                             <input value={DoctorData.doc_email} type="email" name="doc_email" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor Email' onChange={handleChange} required/>
                         </div>
@@ -50,13 +50,25 @@ const AddDoctor = () => {
                         <input value={DoctorData.doc_address} type="text" name="doc_address" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Address' onChange={handleChange} required/>
                     </div>
                     <div className="md:grid grid-cols-2 gap-4">
-                        <div className="">
+                        <div className="md:my-0 my-2">
                             <p className="">Doctor NIC:</p>
                             <input value={DoctorData.doc_nic} type="text" name="doc_nic" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor NIC' onChange={handleChange} required/>
                         </div>
-                        <div className="">
+                        <div className="md:my-0 my-2">
                             <p className="">Doctor Hospital:</p>
                             <input value={DoctorData.doc_hospital} type="email" name="doc_hospital" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor Hospital' onChange={handleChange} required/>
+                        </div>
+                        <div className="md:my-0 my-2">
+                            <p className="">Still working :</p>
+                            <select name="is_work" required value={DoctorData.is_work} className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" onChange={handleChange}>
+                                <option value="">Select One</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                        <div className="md:my-0 my-2">
+                            <p className="">Channeling Area: (ex: For Eye)</p>
+                            <input value={DoctorData.doc_area} type="email" name="doc_area" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Channeling Area' onChange={handleChange} required/>
                         </div>
                     </div>
 
