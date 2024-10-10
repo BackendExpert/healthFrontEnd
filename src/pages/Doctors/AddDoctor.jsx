@@ -1,6 +1,9 @@
+import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const AddDoctor = () => {
+    const navigate = useNavigate()
     const [DoctorData, SetDoctorData] = useState({
         doc_name: '',
         doc_email: '',
@@ -19,11 +22,20 @@ const AddDoctor = () => {
        }));
     };
 
-    const headleDoctorCreate = (e) => {
+    const headleDoctorCreate = async (e) => {
         e.preventDefault()
 
         try{
-            console.log(DoctorData)
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/Doctor/CreateDoctor' + DoctorData)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Doctor Added Successful")
+                    navigate('/Dashboard/DoctorAccounts')
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
         }
         catch(err){
             console.log(err)
@@ -56,7 +68,7 @@ const AddDoctor = () => {
                         </div>
                         <div className="md:my-0 my-2">
                             <p className="">Doctor Hospital:</p>
-                            <input value={DoctorData.doc_hospital} type="email" name="doc_hospital" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor Hospital' onChange={handleChange} required/>
+                            <input value={DoctorData.doc_hospital} type="text" name="doc_hospital" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Doctor Hospital' onChange={handleChange} required/>
                         </div>
                         <div className="md:my-0 my-2">
                             <p className="">Still working :</p>
@@ -68,7 +80,7 @@ const AddDoctor = () => {
                         </div>
                         <div className="md:my-0 my-2">
                             <p className="">Channeling Area: (ex: For Eye)</p>
-                            <input value={DoctorData.doc_area} type="email" name="doc_area" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Channeling Area' onChange={handleChange} required/>
+                            <input value={DoctorData.doc_area} type="text" name="doc_area" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Channeling Area' onChange={handleChange} required/>
                         </div>
                     </div>
 
