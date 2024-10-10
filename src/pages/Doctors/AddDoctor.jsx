@@ -11,7 +11,7 @@ const AddDoctor = () => {
         doc_nic: '',
         doc_hospital: '',
         is_work: '',
-        doc_area: '',
+        specialty: '',
     })
 
     const handleChange = (e) => {
@@ -26,7 +26,7 @@ const AddDoctor = () => {
         e.preventDefault()
 
         try{
-            const res = await axios.post(import.meta.env.VITE_APP_API + '/Doctor/CreateDoctor' + DoctorData)
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/Doctor/CreateDoctor', DoctorData)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Doctor Added Successful")
@@ -74,13 +74,13 @@ const AddDoctor = () => {
                             <p className="">Still working :</p>
                             <select name="is_work" required value={DoctorData.is_work} className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" onChange={handleChange}>
                                 <option value="">Select One</option>
-                                <option value="1">Yes</option>
-                                <option value="0">No</option>
+                                <option value={true}>Yes</option>
+                                <option value={false}>No</option>
                             </select>
                         </div>
                         <div className="md:my-0 my-2">
-                            <p className="">Channeling Area: (ex: For Eye)</p>
-                            <input value={DoctorData.doc_area} type="text" name="doc_area" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Channeling Area' onChange={handleChange} required/>
+                            <p className="">Specialty: (ex: For Eye)</p>
+                            <input value={DoctorData.specialty} type="text" name="specialty" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Specialty' onChange={handleChange} required/>
                         </div>
                     </div>
 
