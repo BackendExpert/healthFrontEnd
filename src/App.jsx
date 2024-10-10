@@ -20,6 +20,7 @@ import TodayAppointments from "./pages/Appointments/TodayAppointments";
 import AddAppointment from "./pages/Appointments/AddAppointment";
 import Profile from "./pages/Profile/Profile";
 import Settings from "./pages/Settings/Settings";
+import AddDoctor from "./pages/Doctors/AddDoctor";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -79,6 +80,7 @@ export default function App() {
             <Route path="AddAppointment" element={<AddAppointment /> } />
             <Route path="Profile" element={<Profile />} />
             <Route path="Settings" element={<Settings /> } />
+            <Route path="CreateDoctor" element={<AddDoctor /> } /> 
           </Route>
         </Routes>
       </Layout>
