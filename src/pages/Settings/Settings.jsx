@@ -26,7 +26,7 @@ const Settings = () => {
               <form onSubmit={HeadleUpdatePassword} method="post" className='mt-4'>
                   <div className="">
                     <p className="mt-2">Current Password : </p>
-                    <input type="text" name="" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Current Password' required/>
+                    <input type="text" name="" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='Current Password' onChange={e => SetPassReset({ ...PassReset, currentpass:e.target.value})} required/>
                   </div>
 
                   <div className="">
