@@ -24,8 +24,7 @@ const Settings = () => {
             if(res.data.Status === "Success"){
               alert("Password has been Reset Successfull, Logging Out...!")
               localStorage.clear()
-              navigate('/PatientPortal')
-              
+              navigate('/PatientPortal')              
             }
           })
         }
