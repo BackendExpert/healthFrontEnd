@@ -10,7 +10,7 @@ const Settings = () => {
         e.preventDefault()
 
         try{
-
+          console.log(PassReset)
         }
         catch(err){
           console.log(err)
@@ -31,7 +31,7 @@ const Settings = () => {
 
                   <div className="">
                     <p className="mt-2">Current Password : </p>
-                    <input type="text" name="" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='New Password' required/>
+                    <input type="text" name="" className="w-full h-12 pl-2 rounded bg-blue-100 mt-2" placeholder='New Password' onChange={e => SetPassReset({ ...PassReset, newpass:e.target.value})} required/>
                   </div>
 
                   <button type="submit" className='bg-[#00B0FF] text-white py-2 px-4 rounded mt-2'>Reset Password</button>
