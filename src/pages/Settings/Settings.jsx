@@ -26,6 +26,9 @@ const Settings = () => {
               localStorage.clear()
               navigate('/PatientPortal')              
             }
+            else{
+              alert(res.data.Error)
+            }
           })
         }
         catch(err){
