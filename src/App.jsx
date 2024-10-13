@@ -21,6 +21,7 @@ import AddAppointment from "./pages/Appointments/AddAppointment";
 import Profile from "./pages/Profile/Profile";
 import Settings from "./pages/Settings/Settings";
 import AddDoctor from "./pages/Doctors/AddDoctor";
+import ForgetPass from "./pages/PortalAuth/ForgetPass";
 
 function Layout({ children }) {
   const [showNavBar, setShowNavBar] = useState(true);
@@ -68,6 +69,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/PatientPortal" element={<Login />} />
+          <Route path="/ForgetPassword" element={<ForgetPass /> } />
           <Route path="/Dashboard/" element={<PrivateRoute element={<Dashboard />} />}>
             <Route path="Home" element={<DashHome />} />
             <Route path="PatientAccounts" element={<PatientAcc /> } />
