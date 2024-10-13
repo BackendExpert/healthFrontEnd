@@ -1,13 +1,23 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 
 const ForgetPass = () => {
     const [email, setEmail] = useState('')
 
-    const headleForgetPass = (e) => {
+    const headleForgetPass = async (e) => {
         e.preventDefault()
 
         try{
-            
+            const res = await axios.post(import.meta.env.VITE_APP_API + '/Auth/ForgetPassword', email)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Password Reset Email has been sent to given Email, Check your Email")
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
         }
         catch(err){
             console.log(err)
