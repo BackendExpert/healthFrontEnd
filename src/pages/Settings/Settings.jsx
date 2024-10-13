@@ -57,6 +57,8 @@ const Settings = () => {
               </form>
           </div>
           <div className="bg-white p-4 my-2 rounded-md shadow-md w-full md:ml-2">
+              <h1 className="font-semibold text-xl">Announcements</h1>
+          
           </div>
         </div>
     </div>
