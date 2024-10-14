@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsCalendarCheckFill, BsLungsFill } from "react-icons/bs";
+import { BsChevronUp, BsChevronDown, BsGearFill, BsList, BsSpeedometer2, BsX, BsPersonFill, BsPeople, BsCalendarCheckFill, BsLungsFill, BsMegaphoneFill } from "react-icons/bs";
 import secureLocalStorage from "react-secure-storage";
 
 const DashSide = () => {
@@ -42,9 +42,9 @@ const DashSide = () => {
       { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
       { id: 2, name: "Voice", link: '/Dashboard/voice' }
     ] },
-    { id: 5, name: "My Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-[#00B0FF]' />, submenu: [
-      { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
-      { id: 2, name: "Voice", link: '/Dashboard/voice' }
+    { id: 5, name: "Announcements", link: '', icon: <BsMegaphoneFill className='h-5 w-auto fill-[#00B0FF]' />, submenu: [
+      { id: 1, name: "Create Announcement", link: '/Dashboard/NewAnnouncement' },
+      { id: 2, name: "Announcements", link: '/Dashboard/Announcements' }
     ] },
     { id: 6, name: "Profile", link: '/Dashboard/Profile', icon: <BsPersonFill className='h-5 w-auto fill-[#00B0FF]' /> },
     { id: 7, name: "Settings", link: '/Dashboard/Settings', icon: <BsGearFill className='h-5 w-auto fill-[#00B0FF]' /> }
