@@ -38,7 +38,11 @@ const DashSide = () => {
         { id: 4, name: "Add Appointment", link: '/Dashboard/AddAppointment' },
       ]
     },
-    { id: 4, name: "My Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-blue-500' />, submenu: [
+    { id: 4, name: "My Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-[#00B0FF]' />, submenu: [
+      { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
+      { id: 2, name: "Voice", link: '/Dashboard/voice' }
+    ] },
+    { id: 5, name: "My Appointments", link: '', icon: <BsCalendarCheckFill className='h-5 w-auto fill-[#00B0FF]' />, submenu: [
       { id: 1, name: "PEO TV", link: '/Dashboard/peoTV' },
       { id: 2, name: "Voice", link: '/Dashboard/voice' }
     ] },
@@ -48,13 +52,14 @@ const DashSide = () => {
 
   // Menu filtering based on RoleUser
   const filteredMenu = SideMenu.filter((menu) => {
-    if (RoleUser === "Doctor" && (menu.id === 2 || menu.id === 4)) return false; // Doctor should not access 'Accounts'
-    if (RoleUser === "Doctor" && menu.id === 3) {
+    if (RoleUser === "Doctor" && (menu.id === 2 || menu.id === 4 || menu.id === 5)) return false; // Doctor should not access 'Accounts'
+    if ((RoleUser === "Doctor" || RoleUser === "Nurse") && menu.id === 3) {
       menu.submenu = menu.submenu.filter((submenu) => submenu.name !== "Add Appointment");
     }
-    if (RoleUser === "Patient" && (menu.id === 2 || menu.id === 3)) return false; // Patient should not access 'Accounts' and 'Appointments'
+    if (RoleUser === "Patient" && (menu.id === 2 || menu.id === 3 || menu.id === 5)) return false; // Patient should not access 'Accounts' and 'Appointments'
     if (RoleUser === "SuperAdmin" && menu.id === 4) return false; // SuperAdmin should not access 'My Appointments'
-    if (RoleUser === "Staff" && menu.id === 4) return false; // Staff should not access 'My Appointments'
+    if (RoleUser === "Staff" && menu.id === 4) return false;
+    if (RoleUser === "Nurse" && (menu.id === 2 || menu.id === 4 || menu.id === 5)) return false; // Staff should not access 'My Appointments'
     return true;
   });
 
