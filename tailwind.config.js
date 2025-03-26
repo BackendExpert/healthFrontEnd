@@ -1,13 +1,9 @@
-// tailwind.config.js
-module.exports = {
+export default {
   content: [
     './src/**/*.{js,jsx,ts,tsx}', // Adjust according to your file paths
   ],
   theme: {
-    extend: {
-      // Custom scrollbar utilities
-      // You can define custom class names here or use the `@apply` directive in your CSS file
-    },
+    extend: {},
   },
   plugins: [
     function({ addUtilities }) {

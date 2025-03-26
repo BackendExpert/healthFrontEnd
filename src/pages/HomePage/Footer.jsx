@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="pt-3 md:flex justify-between">
             <div className="">
-                <p className="text-white">Copyright &copy; 2024  All rights reserved | Developed and Maintained by <a href="" className='text-blue-800 font-bold'>BlackAlphaLabs</a></p>
+                <p className="text-white">Copyright &copy; 2024  All rights reserved | Developed and Maintained by <a href="" className='text-blue-800 font-bold'>JehanKandy</a></p>
             </div>
             <div className="flex text-white">
               All Rights Reserved | Terms & Use | Privacy Policy
